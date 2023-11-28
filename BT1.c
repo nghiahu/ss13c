@@ -3,7 +3,7 @@
 #include <string.h>
 int main(){
 	char str[100];
-    int length; 
+    int length,i; 
     int count;
 	do{
 		printf("*****************MENU*****************\n");
@@ -21,9 +21,8 @@ int main(){
 		switch(choice){
 			case 1:
 				printf("Nhap vao chuoi ky tu: ");
-				gets(str);
-				printf ("\n");
-				printf("%d",choice);
+				scanf("%s",str);
+				fflush(stdin);
 				break;
 			case 2:
 				puts(str);
@@ -33,14 +32,14 @@ int main(){
 				break;
 			case 3:
 				printf("Chuoi dao nguoc : ");
-				for (int i = length ;i>=0;i-- ){
+				for ( i = length ;i>=0;i-- ){
 					printf("%c",str[i]);
 				}
 				printf("\n");
 				break;
 			case 4:
 				 count = 0;
-				for (int i = 0 ;i<=length;i++ ){
+				for ( i = 0 ;i<=length;i++ ){
 				if((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')){
 					count ++;
 				}
@@ -49,7 +48,7 @@ int main(){
 				break;
 			case 5:
 				 count = 0;
-                    for (int i = 0; i<=length ; i++) {
+                    for ( i = 0; i<=length ; i++) {
                         if (str[i] >= '0' && str[i] <= '9') {
                             count++;
                         }
@@ -58,7 +57,7 @@ int main(){
 				break;
 			case 6:
 				 count = 0;
-                    for (int i = 0; i < strlen(str); i++) {
+                    for ( i = 0; i < strlen(str); i++) {
                         if (!((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z') || (str[i] >= '0' && str[i] <= '9'))) {
                             count++;
                         }
@@ -71,4 +70,5 @@ int main(){
 				printf("Vui long chon tu 1 - 7\n");
 		}
 	}while (1 == 1);
+	return 0 ;
 }
